@@ -23,8 +23,9 @@ for i in range(len(files)):
     audio = MP3(files[i])
     # Modify or add album properties
     audio["TALB"] = TALB(encoding=3, text=["My Collection"])  # Set Album Name
-    #audio["TPE1"] = TPE1(encoding=3, text=[artists[i]]) # Set Artist Name
-    #audio["TIT2"] = TIT2(encoding=3, text=[titles[i]]) # Set Title
+    audio["TPE1"] = TPE1(encoding=3, text=[artists[i]]) # Set Artist Name
+    audio["TIT2"] = TIT2(encoding=3, text=[titles[i]]) # Set Title
 
     # Save the changes
+
     audio.save()
